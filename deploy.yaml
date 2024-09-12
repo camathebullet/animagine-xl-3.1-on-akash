@@ -1,0 +1,45 @@
+---
+version: "2.0"
+services:
+  animagine:
+    image: registry.hf.space/cagliostrolab-animagine-xl-3-1:latest
+    expose:
+      - port: 7860
+        as: 7860
+        to:
+          - global: true
+    command:
+      - bash
+      - "-c"
+    args:
+      - python app.py
+    env:
+      - SHOW_DUPLICATE_BUTTON=1
+      - CACHE_EXAMPLES=1
+profiles:
+  compute:
+    animagine:
+      resources:
+        cpu:
+          units: 4
+        memory:
+          size: 32Gi
+        storage:
+          - size: 20Gi
+        gpu:
+          units: 1
+          attributes:
+            vendor:
+              nvidia:
+                - model: rtxa6000
+  placement:
+    dcloud:
+      pricing:
+        animagine:
+          denom: uakt
+          amount: 1000
+deployment:
+  animagine:
+    dcloud:
+      profile: animagine
+      count: 1
