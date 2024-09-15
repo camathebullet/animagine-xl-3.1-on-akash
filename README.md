@@ -12,4 +12,4 @@ This repo contains template to deploy text-to-image model [Animagine XL 3.1](htt
 ## Example
 Prompt: `kimi no na wa., building, cityscape, cloud, cloudy sky, gradient sky, lens flare, no humans, outdoors, power lines, scenery, shooting star, sky, sparkle, star \(sky\), starry sky, sunset, tree, utility pole`
 
-Result: [click](https://imgtr.ee/images/2024/09/12/3b6ea511498690354fa09264e2ab1df7.png)
+Result: [click](https://i.imgur.com/kRG8A8O.png)
